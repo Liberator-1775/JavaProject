@@ -4,6 +4,7 @@ public class User {
 	private Integer id;
 	private String name;
 	private String passwd;
+	private int count;
 
 	public Integer getId() {
 		return this.id;
@@ -24,6 +25,15 @@ public class User {
 	}
 	public void setPasswd(String passwd) {
 		this.passwd = passwd;
+	}
+
+	public int getCount()
+	{
+		return this.count;
+	}
+	public void setCount(int count)
+	{
+		this.count = count;
 	}
 }
 

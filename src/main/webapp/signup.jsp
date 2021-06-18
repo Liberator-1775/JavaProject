@@ -17,7 +17,7 @@
 			<hr />
 		
 			<form action="${pageContext.request.contextPath}/signup" method="post">
-				Логин: <input type="text" name="nome" />
+				Логин: <input type="text" name="name" />
 				</br/> 
 				Пароль:&nbsp;&nbsp; <input type="password" name="passwd" />
 				</br/>

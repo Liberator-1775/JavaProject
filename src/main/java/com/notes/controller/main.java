@@ -67,11 +67,11 @@ public class main extends HttpServlet {
 		String action = request.getParameter("action");
 		
 		if (action.contentEquals("add")) {
-			String nota = request.getParameter("note");
+			String note = request.getParameter("note");
 			Integer imp = Integer.parseInt(request.getParameter("imp"));
 			Integer user_id = Integer.parseInt(request.getParameter("user_id"));
 			String userName = request.getParameter("userName");
-			dao.addNote(nota, user_id, imp);
+			dao.addNote(note, user_id, imp);
 			
 			User user = new User();
 			user.setId(user_id);

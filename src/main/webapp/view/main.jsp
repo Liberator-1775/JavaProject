@@ -45,7 +45,7 @@
 </textarea>
 		</label>
 
-		<br/>
+		<br>
 
 		<label for="imp">Выберите важность заметки.</label>
 		<label>
@@ -64,6 +64,12 @@
 	</form>
 
 	<br>
+		<form action="main" method="get" class="wrapper">
+			Всего заметок: <% user.getCount(); %>
+		</form>
+	<br/>
+
+	<br>
 
 	<form action="main" method="get" class='filter-wrapper'>
 		Поиск:
@@ -78,8 +84,8 @@
 		<%}%>
 		<label>
 			<select name="imp">
-				<option value="1">По возрастанию важности</option>
-				<option value="2">По убыванию важности</option>
+				<option value="1">По убыванию важности</option>
+				<option value="2">По возрастанию важности</option>
 				<option value="0">По умолчанию</option>
 			</select>
 		</label>
