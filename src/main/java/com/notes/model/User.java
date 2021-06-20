@@ -26,14 +26,5 @@ public class User {
 	public void setPasswd(String passwd) {
 		this.passwd = passwd;
 	}
-
-	public int getCount()
-	{
-		return this.count;
-	}
-	public void setCount(int count)
-	{
-		this.count = count;
-	}
 }
 

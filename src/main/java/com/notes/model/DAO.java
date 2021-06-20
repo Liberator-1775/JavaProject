@@ -32,7 +32,6 @@ public class DAO {
             stmt.execute();
             connection = DriverManager.getConnection("jdbc:mysql://localhost/notes", "user", "temp1234");
         } catch (SQLException | ClassNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -58,7 +57,6 @@ public class DAO {
 
 
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
@@ -112,7 +110,6 @@ public class DAO {
                     rs.close();
                     stmt.close();
                 } catch (SQLException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
 
@@ -145,7 +142,6 @@ public class DAO {
                     rs.close();
                     stmt.close();
                 } catch (SQLException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
             }
@@ -173,7 +169,6 @@ public class DAO {
                     rs.close();
                     stmt.close();
                 } catch (SQLException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
 
@@ -206,7 +201,6 @@ public class DAO {
                     rs.close();
                     stmt.close();
                 } catch (SQLException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
             }
@@ -230,7 +224,6 @@ public class DAO {
             stmt.execute();
             stmt.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -247,7 +240,6 @@ public class DAO {
             stmt.execute();
             stmt.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -270,12 +262,11 @@ public class DAO {
             stmt.execute();
             stmt.close();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
 
-    public List<Note> buscaNota(String text, int userId) {
+    public List<Note> findNote(String text, int userId) {
         PreparedStatement stmt;
 
         List<Note> notes = new ArrayList<Note>();
