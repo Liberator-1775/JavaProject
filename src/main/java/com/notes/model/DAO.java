@@ -20,9 +20,7 @@ public class DAO {
             stmt.execute();
             stmt = connection.prepareStatement("USE notes");
             stmt.execute();
-            stmt = connection.prepareStatement("CREATE TABLE IF NOT EXISTS User (Id INT NOT NULL AUTO_INCREMENT, Name VARCHAR(32) NOT NULL, Passwd VARCHAR(32) NOT NULL, NotesCount INT, PRIMARY KEY (Id))");
-            stmt.execute();
-            stmt = connection.prepareStatement("CREATE TRIGGER NotesCount AFTER INSERT ON notes FOR EACH ROW WHERE note.userid = user.id");
+            stmt = connection.prepareStatement("CREATE TABLE IF NOT EXISTS User (Id INT NOT NULL AUTO_INCREMENT, Name VARCHAR(32) NOT NULL, Passwd VARCHAR(32) NOT NULL, PRIMARY KEY (Id))");
             stmt.execute();
             stmt = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Note (Id INT NOT NULL AUTO_INCREMENT, Note TEXT NOT NULL, UserId INT NOT NULL, Importance INT NOT NULL, PRIMARY KEY (ID), FOREIGN KEY (UserId) REFERENCES User (Id))");
             stmt.execute();

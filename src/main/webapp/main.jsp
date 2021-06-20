@@ -27,7 +27,7 @@
 	List<Note> notes = dao.getNotes(user.getId(), imp, search);
 
 %>
-<a href="view/index.jsp"><button>exit</button></a>
+<a href="view/index.jsp"><button>Выход</button></a>
 
 <h1>
 	Добро пожаловать, <%= name %>
