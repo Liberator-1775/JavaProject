@@ -15,22 +15,13 @@ public class DAO {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost/", "root", "liberty1775");
-            PreparedStatement stmt = connection.prepareStatement("CREATE DATABASE IF NOT EXISTS notes");
-            stmt.execute();
-            stmt = connection.prepareStatement("USE notes");
+                    "jdbc:mysql://localhost/", "user", "temp1234");
+            PreparedStatement stmt = connection.prepareStatement("USE notes");
             stmt.execute();
             stmt = connection.prepareStatement("CREATE TABLE IF NOT EXISTS User (Id INT NOT NULL AUTO_INCREMENT, Name VARCHAR(32) NOT NULL, Passwd VARCHAR(32) NOT NULL, PRIMARY KEY (Id))");
             stmt.execute();
             stmt = connection.prepareStatement("CREATE TABLE IF NOT EXISTS Note (Id INT NOT NULL AUTO_INCREMENT, Note TEXT NOT NULL, UserId INT NOT NULL, Importance INT NOT NULL, PRIMARY KEY (ID), FOREIGN KEY (UserId) REFERENCES User (Id))");
             stmt.execute();
-            stmt = connection.prepareStatement("CREATE USER IF NOT EXISTS 'user'@'localhost' IDENTIFIED BY 'temp1234'");
-            stmt.execute();
-            stmt = connection.prepareStatement("GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost'");
-            stmt.execute();
-            stmt = connection.prepareStatement("FLUSH PRIVILEGES");
-            stmt.execute();
-            connection = DriverManager.getConnection("jdbc:mysql://localhost/notes", "user", "temp1234");
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
